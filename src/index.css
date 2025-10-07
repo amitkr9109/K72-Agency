@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: font1;
+  src: url(/fonts/Lausanne-300.woff2);
+}
+@font-face {
+  font-family: font2;
+  src: url(/fonts/Lausanne-500.woff2);
+}
+
+
+.paragraph-image-div-move {
+  animation-name: moveAnimation;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.paragraph-image-div-move-container {
+  opacity: 0;
+  transition: all ease 0.5s;
+}
+
+.hover-applied-div-container:hover .paragraph-image-div-move-container {
+  opacity: 1;
+}
+@keyframes moveAnimation {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
