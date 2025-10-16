@@ -46,18 +46,20 @@ const Projects = () => {
 
   useGSAP(function () {
     gsap.utils.toArray(".images-div").forEach((image) => {
-      gsap.from(image, {
-        height: "100px",
-        stagger: {
-          amount: 0.4
-        },
-        scrollTrigger: {
-          trigger: ".all-images-div",
-          start: "top 80%",
-          end: "top -110%",
-          scrub: true,
+      gsap.fromTo(image, 
+        {y: 150, opacity: 0},
+        {
+          y: 0,
+          opacity: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: image,
+            start: "top 80%",
+            end: "bottom 40%",
+            scrub: true
+          }
         }
-      })
+      )
     })
   });
 
